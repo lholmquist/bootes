@@ -8,10 +8,10 @@
     "test": "./node_modules/mocha/bin/mocha"
   },
   "devDependencies": {
-    "mocha": "~2.0.1",
-    "aquila": "../aquila"
+    "mocha": "~2.0.1"
   },
   "dependencies": {
+    "aquila": "projectodd/aquila#3efea75",
     "async": "~1.2.1"
   }
 }
