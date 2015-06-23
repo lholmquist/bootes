@@ -1,0 +1,17 @@
+{
+  "name": "bootes",
+  "version": "0.1.0",
+  "description": "A pluggable service discovery API",
+  "license": "Apache-2.0",
+  "main": "lib/bootes.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "aquila": "../aquila"
+  },
+  "dependencies": {
+    "async": "~1.2.1"
+  }
+}
