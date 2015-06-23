@@ -11,7 +11,7 @@
     "mocha": "~2.0.1"
   },
   "dependencies": {
-    "aquila": "projectodd/aquila#3efea75",
+    "@projectodd/aquila": "projectodd/aquila#3efea75",
     "async": "~1.2.1"
   }
 }
