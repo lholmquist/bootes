@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@projectodd/aquila": "projectodd/aquila#3efea75",
-    "async": "~1.2.1"
+    "async": "~1.2.1",
+    "docker-links": "~1.0.2"
   }
 }
