@@ -23,6 +23,12 @@ var assert  = require('assert'),
 
 describe('bootes', function() {
 
+  it('should have chainable API calls', function() {
+    var bootes = require('../')().use('in-process').use('aquila')
+        .advertise('foo', 'bar').discover('foo', function() {}).stop();
+    assert.equal(2, bootes.plugins.length);
+  });
+
   it('should pass config to plugins', function() {
     var bootes = new Bootes();
     bootes.use('in-process', {foo: 'bar'});
