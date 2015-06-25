@@ -17,7 +17,6 @@
 'use strict';
 
 var assert  = require('assert'),
-    cluster = require('cluster'),
     fs      = require('fs'),
     Bootes  = require('../');
 
