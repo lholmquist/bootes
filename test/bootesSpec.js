@@ -24,18 +24,18 @@ var assert  = require('assert'),
 describe('bootes', function() {
 
   it('should have chainable API calls', function() {
-    var bootes = require('../')().use('in-process').use('aquila')
+    var bootes = require('../')().use('in-memory').use('aquila')
         .advertise('foo', 'bar').discover('foo', function() {}).stop();
     assert.equal(2, bootes.plugins.length);
   });
 
   it('should pass config to plugins', function() {
     var bootes = new Bootes();
-    bootes.use('in-process', {foo: 'bar'});
+    bootes.use('in-memory', {foo: 'bar'});
     assert.equal('bar', bootes.plugins[0].config.foo);
   });
 
-  var localhostPlugins = ['in-process', 'aquila'];
+  var localhostPlugins = ['in-memory', 'aquila'];
 
   fs.readdirSync(__dirname + '/../lib/plugins/').forEach(function(file) {
     var plugin = file.substring(0, file.length - '.js'.length);
