@@ -75,7 +75,9 @@ describe('bootes', function() {
           });
 
           it('should discover own advertisements', function(done) {
-            bootes.advertise('my-service', 'foo');
+            bootes.advertise('my-service', 'foo', function(err) {
+              assert.ifError(err);
+            });
             bootes.discover('my-service', function(err, url) {
               assert.ifError(err);
               assert.equal('foo', url);
