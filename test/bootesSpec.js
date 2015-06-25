@@ -22,9 +22,14 @@ var assert  = require('assert'),
 
 describe('bootes', function() {
 
-  it('should have chainable API calls', function() {
-    var bootes = require('../')().use('in-memory').use('aquila')
-        .advertise('foo', 'bar').discover('foo', function() {}).stop();
+  it('should have chainable API calls', function(done) {
+    var bootes = require('../')()
+        .use('in-memory')
+        .use('aquila')
+        .advertise('foo', 'bar')
+        .discover('foo', function() {
+          bootes.stop(done);
+        })
     assert.equal(2, bootes.plugins.length);
   });
 
@@ -79,7 +84,7 @@ describe('bootes', function() {
           });
 
           it('should return null if service not found', function(done) {
-            bootes.discover('another-service', function(err, url) {
+            bootes.discover('my-service', function(err, url) {
               assert.ifError(err);
               assert.equal(null, url);
               done();
